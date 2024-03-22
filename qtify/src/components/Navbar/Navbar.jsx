@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import Logo from "../Logo/Logo.js";
-import Button from "../Button/Button.js";
+import Logo from "../Logo/Logo.jsx";
+import Button from "../Button/Button.jsx";
 import { Link } from "react-router-dom";
-import Search from "../Search/Search.js";
+import Search from "../Search/Search.jsx";
 
 function Navbar() {
   return (
