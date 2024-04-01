@@ -1,0 +1,6 @@
+.leftNavi{
+        position: absolute;
+        top: 50%;
+        z-index: 1;    
+        left: 0;
+        }

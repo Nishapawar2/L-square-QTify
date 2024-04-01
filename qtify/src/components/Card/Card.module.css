@@ -1,0 +1,60 @@
+.wrapper {
+  width: 159px;
+  height: 235px;
+  margin: 20px;
+  padding: 0;
+}
+.card {
+  width: 159px;
+  height: 205px;
+  border-radius: 10px;
+  background-color: var(--color-white);
+}
+.titleWrapper {
+ height: 30px;
+ text-decoration: none!important;
+}
+.titleWrapper p {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  text-decoration: none !important;
+  cursor: none;
+  color: var(--color-white);
+}
+.titleWrapper a:link{
+  text-decoration: none!important;
+}
+.card img {
+  width: 159px;
+  height: 170px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+ 
+}
+.banner {
+    height: 35px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.pill {
+  font-size: 12px;
+  background-color: var(--color-black);
+  width: max-content;
+  padding: 6px;
+  border-radius: 10px;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  width: 100%;
+  height: 42px;
+  background-color: var(--color-white);
+  .chip {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+}
