@@ -10,3 +10,7 @@
     height: max-content;
     flex-wrap: wrap;
 }
+
+.filterDiv{
+    padding: 0px 30px;
+}

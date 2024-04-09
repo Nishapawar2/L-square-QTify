@@ -17,7 +17,6 @@ useEffect(()=>{
 return <></>;
 }
 const Carousel = ({ data, renderComponent }) => {
-  console.log("carousel data",data);
   return (
     <>
       <Swiper

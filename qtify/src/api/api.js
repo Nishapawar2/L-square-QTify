@@ -29,10 +29,10 @@ export const fetchSongs=async()=>{
     }
 };
 
-export const fetchGenres=async()=>{
+export const fetchFilters=async()=>{
     try{
         const res=await axios.get(`${BACKEND_ENDPOINT}/genres`);
-        return res.data;
+         return res.data;
     }catch(e){
         console.error(e);
     }

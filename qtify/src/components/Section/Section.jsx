@@ -3,6 +3,7 @@ import styles from "./Section.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
+import Filters from "../Filters/Filters";
 
 const Section = ({ title, data, filterSource, type }) => {
   const [filters, setFilters] = useState([{ key: "all", label: "All" }]);
@@ -28,38 +29,51 @@ const Section = ({ title, data, filterSource, type }) => {
       ? card.genre.key === filters[selectedFilterIndex].key
       : card
   );
+
+  // console.log("filters",filters);
+
   return (
     <>
       <div className={styles.headerDiv}>
         <h3>{title}</h3>
+        {type==='album'?
         <h4 className={styles.toggle} onClick={handleCarToggle}>
           {!carouselToggle ? "Collapse All" : "Show All"}
         </h4>
+        :<></>}
       </div>
 
-      {showFilters && <div className={styles.filterDiv}></div>}
+      {showFilters && (
+        <div className={styles.filterDiv}>
+          <Filters
+            filters={filters}
+            selectedFilterIndex={selectedFilterIndex}
+            setSelectedFilterIndex={setSelectedFilterIndex}
+          />
+        </div>
+      )}
 
       {data.length === 0 ? (
         <CircularProgress />
-      ) : (     
-          <div className={styles.CardWrapper}>
-            {!carouselToggle ? 
+      ) : (
+        <div className={styles.CardWrapper}>
+          {!carouselToggle ? (
             <>
-             <div className={styles.wrapper}>
-              {cardsToRender.map((ele)=>(
-                <Card data={ele} type={type}/>
-              ))}
-             </div>
+              <div className={styles.wrapper}>
+                {cardsToRender.map((ele) => (
+                  <Card data={ele} type={type} />
+                ))}
+              </div>
             </>
-             : 
-             <>
-             <Carousel 
-             data={cardsToRender} 
-             renderComponent={(data)=><Card data={data} type={type}/>}
-             />
-             </>
-             }
-          </div> 
+          ) : (
+            <>
+              <Carousel
+                data={cardsToRender}
+                renderComponent={(data) => <Card data={data} type={type} />}
+              />
+            </>
+          )}
+        </div>
       )}
     </>
   );
